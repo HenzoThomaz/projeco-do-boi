@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin:0;
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Source Sans 3", sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image:url(./imagens/WhatsApp\ Image\ 2025-04-01\ at\ 19.44.51\ \(1\).jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    max-width:none;
+    margin: 0 ;
+    padding: 0 ;
+}
+.btn{
+    background-color: #008000;
+    color: black;
+    padding:15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.btn:hover{
+    background-color: #32CD32;
+
+}
+header{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-top:  20px;
+    background-color:	#6B8E23	;
+    margin: 0;
+    padding-bottom: 20px;
+}
+nav a{
+    padding-left:25px ;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav ul a{
+    color: black;
+    margin: 0 25px;
+    text-transform: uppercase;
+    display: block;
+    font-size: 16px;
+}
+.btn2{
+    background-color: #008000;
+    color: black;
+    padding:15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.btn2:hover{
+    background-color: #32CD32;
+}
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    padding: auto;
+}
+.box_form{
+    background-color:#36393f;
+    color: black;
+    padding: 50px 50px;
+    border-radius: 10px;
+}
+.form_content .form-input{
+   margin-top: 15px;
+}
+.form_content label{
+    color: #b9bbbe;
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.form_content input{
+    background-color:#202225;
+    color:#dcddde ;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    border:none;
+    padding: 6px;
+    height: 40px;
+    border-radius: 5px;
+}
+.form_content .forget-password-link{
+    margin-top: 2px;
+}
+.form_content .forget-password-link a{
+    color: #32CD32;
+    font-weight: 500;
+    font-size: 14px;
+}
+.form_content button{
+    background-color: #008000;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform:uppercase ;
+    border: none;
+    outline: none;
+    border-radius: 5px ;
+    padding: 5px 70px ;
+    height: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+.form_content .register-link{
+    margin-top: 20px;
+    color: #dcddde;
+    font-size: 14px;
+    font-weight: 500;
+}
+.form_content .register-link a{
+    color: #32CD32;
+    font-weight: 500;
+    font-size: 14px;
+}

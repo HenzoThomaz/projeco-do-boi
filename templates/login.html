@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Vacinação de Bovinos</title>
+    <link rel="shortcut icon" href="imagens/WhatsApp Image 2025-04-01 at 19.44.51.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <!--parte inicial do site-->
+ <header>
+    <!--container seria a parte la em cima da tela inincial-->
+    <div class="container"> 
+        <nav>
+            <a href="login.html">
+                <img src="" alt="logo">
+            </a>
+            <ul>
+                <a class="btn" href="login.html">Página inicial</a>
+                <a class="btn2" href="sobre.html">Sobre</a>
+            </ul>
+        </nav>
+            <section class="banner">
+                <div class="box_form">
+                    <div class="form_content">
+                        <form action="/login" method="post">
+                            <div class="form-input">
+                                <label for="nome">Nome de usuário:</label> <br>
+                                <input type="text" id="nome" name="nome">
+                            </div>
+                            <div class="form-input2">
+                                <label for="senha">senha:</label> <br>
+                                <input type="password" id="senha" name="senha">
+                            </div>
+                            <div class="forget-password-link">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                            <button type="submit">Entrar</button>
+                            <p class="register-link">Ainda não tem uma conta? <a href="#">Criar nova conta</a></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+    </div>
+    
+
+
+ </header> 
+    
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

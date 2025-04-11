@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin:0;
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Source Sans 3", sans-serif;
+}
+.container{
+    max-width:none;
+    margin: 0 ;
+    padding: 0 ;
+}
+.btn{
+    background-color: #008000;
+    color: black;
+    padding:15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.btn:hover{
+    background-color: #32CD32;
+
+}
+header{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-top:  20px;
+    background-color:	#6B8E23	;
+    margin: 0;
+    padding-bottom: 20px;
+}
+nav a{
+    padding-left:25px ;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav ul a{
+    color: black;
+    margin: 0 25px;
+    text-transform: uppercase;
+    display: block;
+    font-size: 16px;
+}
+.btn2{
+    background-color: #008000;
+    color: black;
+    padding:15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.btn2:hover{
+    background-color: #32CD32;
+}
+.banner{
+    background-image: url(imagens/dia-do-estudante.webp);
+    background-color: green;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+}
+.banner-text{
+    color:#008000;
+    text-align: center;
+    margin: 150px;
+    padding: 0 90px;
+    
+}
+section, footer{
+    padding: 54px 0 ;
+}
+h1{
+    font-size: 96px;
+    text-transform: uppercase;
+}
