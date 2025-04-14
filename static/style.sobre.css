@@ -88,3 +88,78 @@ h1{
     font-size: 96px;
     text-transform: uppercase;
 }
+section-title{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 5px solid #008000;
+}
+.container2{
+    font-size: 25px;
+    background-color: #87b331;
+    text-transform: uppercase;
+    text-align: center;
+    color: #008000;
+    width: 20%;
+    border-radius: 20px;
+}
+section2{
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.texto{
+    width: 50% ;
+    padding: 40px 55px 40px 55px;
+    font-size: 18px;
+    text-align: center;
+}
+.imagem-grupo{
+    width: 50%;
+    
+}
+.imagem-grupo img{
+    width: 70%;
+    border-radius: 30px;
+}
+.container3{
+    font-size: 25px;
+    background-color: #87b331;
+    text-transform: uppercase;
+    text-align: center;
+    color: #008000;
+    width: 35%;
+    border-radius: 20px;
+    
+}
+section-title2{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.inicio-projeto{
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.inicio-projeto p{
+    width: 70% ;
+}
+footer{
+    background-color:#6B8E23;
+    border-top:5px solid #008000;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    max-height: 50px;
+}
+footer a img{
+    border-radius:30px;
+    
+}
