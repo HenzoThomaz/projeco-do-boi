@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Vacinação de Bovinos</title>
     <link rel="shortcut icon" href="imagens/WhatsApp Image 2025-04-01 at 19.44.51.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="/projeco-do-boi/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <!--parte inicial do site-->
@@ -37,7 +37,7 @@
                                 <a href="#">Esqueceu sua senha?</a>
                             </div>
                             <button type="submit">Entrar</button>
-                            <p class="register-link">Ainda não tem uma conta? <a href="create_conta.html">Criar nova conta</a></p>
+                            <p class="register-link">Ainda não tem uma conta? <a href="cadastro.html">Criar nova conta</a></p>
                         </form>
                     </div>
                 </div>

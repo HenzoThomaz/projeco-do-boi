@@ -1,12 +1,25 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,Blueprint
+from cadastro import cadastro_bp
 
 app = Flask(__name__)
+app.register_blueprint(cadastro_bp)
 
 #banco de dados
 usuarios = {
     "admin": "1234",  
     "usuario": "senha"
 }
+@app.route('/cadastro.html')
+def cadastro():
+    return render_template("cadastro.html")
+
+@app.route('/sobre.html')
+def sobre():
+    return render_template("sobre.html")
+
+@app.route('/login.html')
+def retorno_homepage():
+    return render_template("login.html")
 
 @app.route('/')
 def homepage():

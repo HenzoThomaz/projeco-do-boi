@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando_sua_conta</title>
+</head>
+<body>
+
+    <h1>Criando sua conta</h1>
+    <form action="/criar_conta" method="post">
+        <div>
+            <label for="nome">Seu Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div>
+            <label for="telefone">Seu Número de Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+        </div>
+        <div>
+            <label for="senha">Crie sua Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
+        <div>
+            <label for="nome">Confirme sua senha:</label>
+            <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+        </div>
+        <button type="submit">Criar Conta</button>
+    </form>
+
+</body>
+</html>
