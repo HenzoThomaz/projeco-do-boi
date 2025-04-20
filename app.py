@@ -13,6 +13,11 @@ usuarios = {
 def cadastro():
     return render_template("cadastro.html")
 
+#teste de rota do redefinir senha
+@app.route('/senha.html')
+def senha():
+    return render_template("senha.html")
+
 @app.route('/sobre.html')
 def sobre():
     return render_template("sobre.html")
