@@ -12,9 +12,9 @@ app = Flask(__name__)
 def conectar_bd():
     banco = mysql.connector.connect(
   host="localhost",
-  user="seu_usuario",
-  password="sua_senha",
-  database="seu_banco_de_dados"
+  user="root",
+  password="3306",
+  database="trabalho"
 )
 
 @cadastro_bp.route('/')
