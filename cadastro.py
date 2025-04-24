@@ -25,7 +25,7 @@ def pagina_cadastro():
     return render_template('cadastro.html')
 
     #falta fazer funcionar pqp
-@cadastro_bp.route('/cadastro', methods=['POST'])
+@cadastro_bp.route('/cadastro.html', methods=['POST'])
 def criar_conta():
   
   if request.method == 'POST':
