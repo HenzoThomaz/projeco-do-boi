@@ -7,7 +7,7 @@ cadastro_bp = Blueprint('cadastro',__name__, url_prefix='/cadastro')
 app = Flask(__name__)
 
 def salvar_no_bd(nome, telefone, senha):
-  conn = _mysql_connector.connect(
+  conn = mysql_connector.connect(
     host="localhost",
     user="root",
     password="",
