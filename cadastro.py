@@ -7,7 +7,7 @@ cadastro_bp = Blueprint('cadastro',__name__, url_prefix='/cadastro')
 app = Flask(__name__)
 
 def salvar_no_bd(nome, telefone, senha):
-  conn = mysql_connector.connect(
+  conn = mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
@@ -27,15 +27,18 @@ def pagina_cadastro():
     #falta fazer funcionar pqp
 @cadastro_bp.route('/cadastro', methods=['POST'])
 def criar_conta():
+  
   if request.method == 'POST':
     nome = request.form['nome']
     telefone = request.form['telefone']
     senha = request.form['senha']
     confirmar_senha = request.form['confirmar_senha']
+    
     if request.form['confirmar_senha'] != request.form['senha']:
       return render_template("/cadastro.html",mensagem="As senhas inseridas não são iguais!")   
+  
   salvar_no_bd(nome,telefone,senha)
-  return render_template("cadastro.html",mensagem="Sua conta foi criada com sucesso!")
+  return render_template("/cadastro.html",mensagem="Sua conta foi criada com sucesso!")
 
     
     
