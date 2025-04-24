@@ -4,7 +4,7 @@ from cadastro import cadastro_bp
 app = Flask(__name__)
 app.register_blueprint(cadastro_bp)
 
-#banco de dados
+#banco de dados temporario
 usuarios = {
     "admin": "1234",  
     "usuario": "senha"
