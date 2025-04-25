@@ -6,7 +6,7 @@ cadastro_bp = Blueprint('cadastro',__name__, url_prefix='/cadastro')
 
 app = Flask(__name__)
 
-def salvar_no_bd(nome, telefone, senha):
+def conexão_bd(nome, telefone, senha):
   conn = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -37,7 +37,7 @@ def criar_conta():
     if request.form['confirmar_senha'] != request.form['senha']:
       return render_template("/cadastro.html",mensagem="As senhas inseridas não são iguais!")   
   
-  salvar_no_bd(nome,telefone,senha)
+  conexão_bd(nome,telefone,senha)
   return render_template("/cadastro.html",mensagem="Sua conta foi criada com sucesso!")
 
     
