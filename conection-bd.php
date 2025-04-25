@@ -3,11 +3,11 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "projeto-boi"
+$dbname = "projeto-boi";
 
 // aqui serve para criar a conexão com o banco de dados do xampp
 
-$conn = new mysql(hostname: $servername, username: $username, password: $password, database: $dbname);
+$conn = new mysqli(hostname: $servername, username: $username, password: $password, database: $dbname);
 
 
 // verificação de conexão
