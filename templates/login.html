@@ -24,7 +24,7 @@
             <section class="banner">
                 <div class="box_form">
                     <div class="form_content">
-                        <form action="/login" method="post">
+                        <form action="{{ url_for('login.login') }}" method="post">
                             <div class="form-input">
                                 <label for="nome">Nome de usuário:</label> <br>
                                 <input type="text" id="nome" name="nome">

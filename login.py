@@ -1,12 +1,19 @@
 from flask import Flask, render_template, request, url_for,redirect,Blueprint
 import mysql.connector
-from cadastro import conexão_bd
+
 
 login_bp = Blueprint('login',__name__, url_prefix='/login')
 
 app = Flask(__name__)
 
-conexão_bd
+def conectar_bd():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="projeto-boi"
+    )
+    return conn
 
 @login_bp.route('/')
 def pagina_login():
@@ -18,19 +25,23 @@ def login():
         nome = request.form.get('nome')
         senha = request.form.get('senha')
 
-        cursor = conexão_bd.cursor()
-        query = "SELECT * FROM usuarios WHERE nome = %s AND senha = %s"
-        cursor.execute(query, (nome, senha))
-        usuario = cursor.fetchone()
-        cursor.close()
+        try:
+                conn = conectar_bd()
+                cursor = conn.cursor()
+                query = "SELECT * FROM usuarios WHERE nome = %s AND senha = %s"
+                cursor.execute(query, (nome, senha))
+                usuario = cursor.fetchone()
+                cursor.close()
+                conn.close()    
 
-        if usuario:
-            # Se tudo estiver certinho no bd, redirecione para a página principal
-            return render_template('principal.html')
-        else:
-            # Se n exiba a mensagem de erro novamente no formulário de login do html
-            return render_template('login.html', mensagem="Nome de usuário ou senha incorretos")
+                if usuario:
+                # Se tudo estiver certinho no bd, redirecione para a página principal
+                    return render_template('principal.html')
+                else:
+                # Se n exiba a mensagem de erro novamente no formulário de login do html
+                    return render_template('login.html', mensagem="Nome de usuário ou senha incorretos")
+        except mysql.connector.Error as err:mensagem = f"Erro ao conectar ao banco de dados: {err}"
     else:
-        # Se o método da requisição não for POST, apenas renderize a página de login
+     # Se o método da requisição não for POST, apenas renderize a página de login
         return render_template('login.html', mensagem="Insira as informações para continuar.")
 

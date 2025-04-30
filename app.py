@@ -19,9 +19,9 @@ def senha():
 def sobre():
     return render_template("sobre.html")
 
-@app.route('/login.html')
-def login():
-    return render_template("login.html")
+@app.route('/principal.html')
+def principal():
+    return render_template("principal.html")
 
 @app.route('/')
 def homepage():
