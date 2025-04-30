@@ -23,6 +23,10 @@ def sobre():
 def principal():
     return render_template("principal.html")
 
+@app.route('/login.html')
+def login():
+    return render_template("login.html")
+
 @app.route('/')
 def homepage():
     return render_template("login.html") 

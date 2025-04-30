@@ -40,8 +40,9 @@ def login():
                 else:
                 # Se n exiba a mensagem de erro novamente no formulário de login do html
                     return render_template('login.html', mensagem="Nome de usuário ou senha incorretos")
-        except mysql.connector.Error as err:mensagem = f"Erro ao conectar ao banco de dados: {err}"
+        except mysql.connector.Error as err:
+            mensagem = f"Erro ao conectar ao banco de dados: {err}"
     else:
      # Se o método da requisição não for POST, apenas renderize a página de login
-        return render_template('login.html', mensagem="Insira as informações para continuar.")
+        return render_template('login.html', mensagem=mensagem)
 

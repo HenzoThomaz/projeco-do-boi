@@ -22,9 +22,8 @@ def conexão_bd(nome, telefone, senha):
 
 @cadastro_bp.route('/')
 def pagina_cadastro():
-    return render_template('cadastro.html')
+    return render_template('/cadastro.html')
 
-    #falta fazer funcionar pqp
 @cadastro_bp.route('/cadastro.html', methods=['POST'])
 def criar_conta():
   
