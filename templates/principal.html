@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <title>Controle de Vacinação de Bovinos</title>
+    <!--esse style eu pedi pro chat gpt fazer pra ter uma ideia de como ia ficar essa barra lateral-->
+    <style>
+    body {
+      margin: 0;
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #1e1e1e;
+      padding: 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  </style>
 </head>
 <body>
-    <h1>tela principal</h1>
+    <header>
+        <div class="container">
+            <h1>VAC gado</h1>
+        </div>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <a class="btn" href="">Cadastrar Vacina</a>
+                    <a class="btn2" href="">Calendario de Vacinação</a>
+                    <a class="btn" href="">Registro de Vacina</a>
+                    <a class="btn2" href="">Relatórios</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
 </body>
 </html>
