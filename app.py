@@ -1,10 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for,Blueprint
 from cadastro import cadastro_bp
 from login import login_bp
+from cadastrar_vacina import cadastrar_vacina_bp
+from calendario import calendario_bp
+from registros import registros_bp
+from relatorios import relatorios_bp
+
 
 app = Flask(__name__)
 app.register_blueprint(cadastro_bp)
 app.register_blueprint(login_bp)
+app.register_blueprint(cadastrar_vacina_bp)
+app.register_blueprint(calendario_bp)
+app.register_blueprint(registros_bp)
+app.register_blueprint(relatorios_bp)
 
 @app.route('/cadastro.html')
 def cadastro():
