@@ -1,0 +1,131 @@
+@import url('https://fontd.googleapis.com/css2?family=Source+3,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    text-decoration: none;
+    outline: none;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./imagens/WhatsApp\ Image\ 2025-04-01\ at\ 19.44.51\ \(1\).jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1e1e1e;
+    padding: 30px 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 2px 0 10px rgna(0, 0, 0, 0.3);
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.sidebar .btn{
+    background-color: #008000;
+}
+
+.sidebar .btn:hover {
+    background-color: #32CD32;
+}
+
+.sidebar .btn2 {
+    background-color: #2196F3;
+}
+
+.sidebar .btn2:hover {
+    background-color: #1976D2;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #36393f;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: #dcddde;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.container h1 {
+    font-size: 26px;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+form {
+    background-color: #202225;
+    padding: 30px;
+    border-radius: 10px;
+    color: #dcddde;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+form label {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f3136;
+    color: #dcddde;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008000;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button:hover {
+    background-color: #32CD32;
+}
