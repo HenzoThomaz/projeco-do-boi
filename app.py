@@ -36,6 +36,22 @@ def principal():
 def login():
     return render_template("login.html")
 
+@app.route('/cadastar_vacina.html')
+def login():
+    return render_template("cadastar_vacina.html")
+
+@app.route('/calendario.html')
+def login():
+    return render_template("calendario.html")
+
+@app.route('/registro.html')
+def login():
+    return render_template("registro.html")
+
+@app.route('/relatorios.html')
+def login():
+    return render_template("relatorios.html")
+
 @app.route('/')
 def homepage():
     return render_template("login.html") 
