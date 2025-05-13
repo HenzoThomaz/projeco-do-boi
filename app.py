@@ -37,19 +37,19 @@ def login():
     return render_template("login.html")
 
 @app.route('/cadastar_vacina.html')
-def login():
+def cadastro_vac():
     return render_template("cadastar_vacina.html")
 
 @app.route('/calendario.html')
-def login():
+def calendario():
     return render_template("calendario.html")
 
 @app.route('/registro.html')
-def login():
+def registros():
     return render_template("registro.html")
 
 @app.route('/relatorios.html')
-def login():
+def relatorios():
     return render_template("relatorios.html")
 
 @app.route('/')
