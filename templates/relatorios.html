@@ -6,6 +6,26 @@
     <title>Relatorios de Vacinação</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Relatórios de Vacinação</h1>
+        <p>Resumo das aplicações de vacinas:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Vacina</th>
+                    <th>Total de Aplicações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in dados %}
+                <tr>
+                    <td>{{ row.vacina }}</td>
+                    <td>{{ row.total_aplicacoes }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
