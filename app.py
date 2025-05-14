@@ -32,9 +32,9 @@ def sobre():
 def principal():
     return render_template("principal.html")
 
-#@app.route('/login.html')
-#def login():
-    #return render_template("login.html")
+@app.route('/login.html')
+def login():
+    return render_template("login.html")
 
 @app.route('/cadastar_vacina.html')
 def cadastro_vac():
