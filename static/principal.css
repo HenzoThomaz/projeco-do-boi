@@ -41,7 +41,7 @@ body {
 }
 
 .sidebar .btn{
-    background-color: #008000;
+    background-color: #74a03a;
 }
 
 .sidebar .btn:hover {
@@ -49,7 +49,7 @@ body {
 }
 
 .sidebar .btn2 {
-    background-color: #32CD32;
+    background-color: #74a03a;
 }
 
 .sidebar .btn2:hover {
@@ -115,7 +115,7 @@ form input {
 form button {
     width: 100%;
     padding: 10px;
-    background-color: #008000;
+    background-color: #74a03a;
     color: white;
     font-size: 16px;
     font-weight: 600;

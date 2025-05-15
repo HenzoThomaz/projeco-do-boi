@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(201, 202, 201);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container {
+    background-color: #36393f;
+    padding: 60px 95px;
+    border-radius: 10px;
+    text-align: center;
+    color: #dcddde;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+}
+
+.container img {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+.container h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #74a03a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.btn:hover {
+    background-color: #32CD32;
+}
+
+.banner .box_form {
+    background-color: #202225;
+    padding: 65px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2f3136;
+    color: #dcddde;
+    font-size: 15px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+form textarea {
+    height: 180px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #74a03a;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button:hover {
+    background-color: #32CD32;
+}
