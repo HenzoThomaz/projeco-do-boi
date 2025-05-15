@@ -42,7 +42,7 @@ body {
 }
 
 .btn {
-    background-color: #008000;
+    background-color: #83a853;
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
@@ -89,7 +89,7 @@ form input {
 form button {
     width: 100%;
     padding: 10px;
-    background-color: #008000;
+    background-color: #83a853;
     color: white;
     font-size: 16px;
     font-weight: 600;
