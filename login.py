@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, url_for,redirect,Blueprint
 import mysql.connector
 
 
-login_bp = Blueprint('login',__name__, url_prefix='/login')
+login_bp = Blueprint('login',__name__)
 
 app = Flask(__name__)
 
@@ -36,7 +36,7 @@ def login():
 
                 if usuario:
                 # Se tudo estiver certinho no bd, redirecione para a página principal
-                    return render_template('principal.html')
+                    return redirect(url_for('principal'))
                 else:
                 # Se n exiba a mensagem de erro novamente no formulário de login do html
                     return render_template('login.html', mensagem="Nome de usuário ou senha incorretos")

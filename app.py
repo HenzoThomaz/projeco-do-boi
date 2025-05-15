@@ -30,15 +30,15 @@ def sobre():
 
 @app.route('/principal.html')
 def principal():
-    return render_template("principal.html")
+    return render_template("/principal.html")
 
-@app.route('/login.html')
-def login():
-    return render_template("login.html")
+#@app.route('/login.html')
+#def login():
+ #   return render_template("login.html")
 
-@app.route('/cadastar_vacina.html')
+@app.route('/cadastrarvac.html')
 def cadastro_vac():
-    return render_template("cadastar_vacina.html")
+    return render_template("cadastrarvac.html")
 
 @app.route('/calendario.html')
 def calendario():
