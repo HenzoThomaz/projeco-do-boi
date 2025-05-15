@@ -15,10 +15,10 @@
         <a class="btn" href="principal.html">Voltar</a>
             <section class="banner">
                 <div class="box_form">
-                    <form action="#" method="post">
+                    <form action="{{ url_for('registros.registrar') }}" method="post">
                         <div>
-                            <label for="nomeAnimal">Nome do Animal:</label>
-                            <input type="text" id="nomeAnimal" name="nomeAnimal" required>
+                            <label for="nomeAnimal">Identificação do Animal:</label>
+                            <input type="text" id="nomeAnimal" name="animal" required>
                         </div>
                         <br>
                         <div>
@@ -28,12 +28,12 @@
                         <br>
                         <div>
                             <label for="dataAplicacao">Data de Aplicação:</label>
-                            <input type="date" id="dataAplicacao" name="dataAplicacao" required>
+                            <input type="date" id="dataAplicacao" name="data_aplicacao" required>
                         </div>
                         <br>
                         <div>
                             <label for="observacao">Observação:</label>
-                            <textarea id="observacao" name="observacao"></textarea>
+                            <textarea id="observacao" name="observacoes"></textarea>
                         </div>
                         <br>
                         <button type="submit">Cadastrar</button>
