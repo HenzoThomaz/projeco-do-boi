@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect
 import mysql.connector
 
-cadastrar_vacina_bp = Blueprint('cadastrar_vacina', __name__, url_prefix='/vacina')
+cadastrar_vacina_bp = Blueprint('cadastrarvac', __name__)
 
 def conectar_bd():
     return mysql.connector.connect(
@@ -22,5 +22,5 @@ def cadastrar():
         conn.commit()
         cursor.close()
         conn.close()
-        return render_template('cadastrar_vacina.html', mensagem="Vacina cadastrada com sucesso!")
-    return render_template('cadastrar_vacina.html')
+        return render_template('cadastrarvac.html', mensagem="Vacina cadastrada com sucesso!")
+    return render_template('cadastrarvac.html')

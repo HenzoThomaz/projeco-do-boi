@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro_de_Vacinas</title>
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='registro.css') }}">
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
     <div class="container"> 
         <img src="" alt="logo">
         <h1>Registro de Vacinas</h1>
-        <a class="btn" href="/templates/principal.html">Voltar</a>
+        <a class="btn" href="principal.html">Voltar</a>
             <section class="banner">
                 <div class="box_form">
                     <form action="#" method="post">
