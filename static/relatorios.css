@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #36393f;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: #dcddde;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #b9bbbe;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #555;
+    text-align: left;
+}
+
+thead {
+    background-color: #74a03a;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2f3136;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #202225;
+}
+
+tbody td {
+    color: #dcddde;
+}
+
+tbody tr:hover {
+    background-color: #3a3d41;
+}

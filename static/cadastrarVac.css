@@ -4,52 +4,52 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
     text-decoration: none;
     outline: none;
-    font-family: "Source Sans 3", sans-serif;
 }
 
 body {
     width: 100vw;
-    height: 100vh;
-    background-image: url(./imagens/WhatsApp\ Image\ 2025-04-01\ at\ 19.44.51\ \(1\).jpeg); 
+    min-height: 100vh;
+    background-color: beige;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .container {
     background-color: #36393f;
     padding: 30px 40px;
     border-radius: 10px;
-    text-align: center;
     color: #dcddde;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
 }
 
-.container h1 {
-    font-size: 26px;
-    margin-top: 15px;
-    font-weight: 700;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+nav img {
+    max-height: 50px;
 }
 
 .btn {
     background-color: #74a03a;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 16px;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: 600;
-    font-size: 16px;
-    border: none;
+    font-size: 14px;
     transition: background-color 0.2s ease-in-out;
 }
 
@@ -57,41 +57,55 @@ body {
     background-color: #32CD32;
 }
 
-form {
+.banner .box_form {
     background-color: #202225;
-    padding: 30px;
+    padding: 25px;
     border-radius: 10px;
-    color: #dcddde;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
-form label {
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 6px;
+.form_content h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
-form input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #2f3136;
-    color: #dcddde;
-    font-size: 15px;
+.form-input,
+.form-input2 {
     margin-bottom: 20px;
 }
 
-form button {
+label {
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+input[type="text"] {
     width: 100%;
     padding: 10px;
-    background-color: #74a03a;
-    color: white;
-    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2f3136;
+    color: #dcddde;
+    font-size: 15px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botao-primario,
+.botao-secudario {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
     font-weight: 600;
     border: none;
     border-radius: 8px;
@@ -100,6 +114,20 @@ form button {
     transition: background-color 0.2s ease-in-out;
 }
 
-form button:hover {
+.botao-primario {
+    background-color: #74a03a;
+    color: white;
+}
+
+.botao-primario:hover {
     background-color: #32CD32;
+}
+
+.botao-secudario {
+    background-color: #4f545c;
+    color: #fff;
+}
+
+.botao-secudario:hover {
+    background-color: #5f656e;
 }

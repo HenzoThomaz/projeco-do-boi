@@ -4,67 +4,67 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
     text-decoration: none;
     outline: none;
-    font-family: "Source Sans 3", sans-serif;
 }
 
 body {
     width: 100vw;
-    height: 100vh;
-    background-image: url(./imagens/WhatsApp\ Image\ 2025-04-01\ at\ 19.44.51\ \(1\).jpeg); 
-    background-size: cover;
+    min-height: 100vh;
+    background-color: rgb(201, 202, 201);
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 .container {
     background-color: #36393f;
-    padding: 30px 40px;
+    padding: 60px 95px;
     border-radius: 10px;
     text-align: center;
     color: #dcddde;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
+}
+
+.container img {
+    max-width: 80px;
+    margin-bottom: 10px;
 }
 
 .container h1 {
     font-size: 26px;
-    margin-top: 15px;
     font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .btn {
+    display: inline-block;
     background-color: #74a03a;
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    border: none;
     transition: background-color 0.2s ease-in-out;
+    margin-bottom: 30px;
 }
 
 .btn:hover {
     background-color: #32CD32;
 }
 
-form {
+.banner .box_form {
     background-color: #202225;
-    padding: 30px;
+    padding: 65px;
     border-radius: 10px;
-    color: #dcddde;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    text-align: left;
 }
 
 form label {
@@ -75,20 +75,26 @@ form label {
     margin-bottom: 6px;
 }
 
-form input {
+form input,
+form textarea {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #2f3136;
     color: #dcddde;
     font-size: 15px;
     margin-bottom: 20px;
+    resize: vertical;
+}
+
+form textarea {
+    height: 180px;
 }
 
 form button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #74a03a;
     color: white;
     font-size: 16px;
