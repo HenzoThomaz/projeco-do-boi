@@ -9,26 +9,32 @@
 
 </head>
 <body>
-    <div class="sidebar">
-        <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
-        <a class="btn2" href="calendario.html">Calendário de Vacinação</a>
-        <a class="btn" href="registro.html">Registro de Vacina</a>
-        <a class="btn2" href="relatorios.html">Relatórios</a>
-    </div>
-
-    <div class="main-content">
-        <div class="container">
-            <h1>Controle de Vacinação de Bovinos</h1>
+    <div class="barra-superior">
+        <img src="" alt="">
+        <h1>Controle de Vacinação de Bovinos</h1>
+        <a class="btn3" href="/">Sair</a>
+    
+        <div class="sidebar">
+            <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
+            <a class="btn2" href="calendario.html">Calendário de Vacinação</a>
+            <a class="btn" href="registro.html">Registro de Vacinação</a>
+            <a class="btn2" href="relatorios.html">Relatórios</a>
         </div>
-        <form>
-            <label for="vacina">Vacina</label>
-            <input type="text" id="vacina" name="vacina" required>
 
-            <label for="data">Data</label>
-            <input type="date" id="data" name="data" required>
+        <div class="main-content">
+            <div class="container">
+                <h2>Próxima Vacina a Ser Aplicada</h1>
+            
+                <form>
+                    <label for="vacina">Vacina</label>
+                    <input type="text" id="vacina" name="vacina" required>
 
-            <button type="submit">Salvar</button>
-        </form>
-    </div>
+                    <label for="data">Data</label>
+                    <input type="date" id="data" name="data" required>
+
+                </form>
+            </div>
+        </div>
+    </div>    
 </body>
 </html>

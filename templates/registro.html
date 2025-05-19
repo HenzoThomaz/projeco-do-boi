@@ -7,43 +7,49 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='registro.css') }}">
 </head>
 <body>
-    <header>
-    <!--container seria a parte la em cima da tela inincial-->
-    <div class="container"> 
-        <img src="/static/imagens/Logo.png" alt="logo">
-        <h1>Registro de Vacinas</h1>
-        <a class="btn" href="principal.html">Voltar</a>
-            <section class="banner">
-                <div class="box_form">
-                    <form action="{{ url_for('registros.registrar') }}" method="post">
-                        <div>
-                            <label for="nomeAnimal">Identificação do Animal:</label>
-                            <input type="text" id="nomeAnimal" name="animal" required>
-                        </div>
-                        <br>
-                        <div>
-                            <label for="vacina">Vacina:</label>
-                            <input type="text" id="vacina" name="vacina" required>
-                        </div>
-                        <br>
-                        <div>
-                            <label for="dataAplicacao">Data de Aplicação:</label>
-                            <input type="date" id="dataAplicacao" name="data_aplicacao" required>
-                        </div>
-                        <br>
-                        <div>
-                            <label for="observacao">Observação:</label>
-                            <textarea id="observacao" name="observacoes"></textarea>
-                        </div>
-                        <br>
-                        <button type="submit">Cadastrar</button>
-                    </form>
-                </div>
-            </section>
-    </div>
+    <div class="barra-superior">
+        <img src="" alt="">
+        <h1>Controle de Vacinação de Bovinos</h1>
+        
     
+        <div class="sidebar">
+            <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
+            <a class="btn2" href="calendario.html">Calendário de Vacinação</a>
+            <a class="btn" href="registro.html">Registro de Vacinação</a>
+            <a class="btn2" href="relatorios.html">Relatórios</a>
+        </div>
+        <div class="container"> 
+            <h1>Registro de Vacinas</h1>
+                    <div class="box_form">
+                        <form action="{{ url_for('registros.registrar') }}" method="post">
+                            <div>
+                                <label for="nomeAnimal">Identificação do Animal:</label>
+                                <input type="text" id="nomeAnimal" name="animal" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="vacina">Vacina:</label>
+                                <input type="text" id="vacina" name="vacina" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="dataAplicacao">Data de Aplicação:</label>
+                                <input type="date" id="dataAplicacao" name="data_aplicacao" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="observacao">Observação:</label>
+                                <textarea id="observacao" name="observacoes"></textarea>
+                            </div>
+                            <br>
+                            <button type="submit">Cadastrar</button>
+                        </form>
+                    </div>
+                
+        </div>
+    </div>
 
 
- </header> 
+  
 </body>
 </html>

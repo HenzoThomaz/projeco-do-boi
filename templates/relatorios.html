@@ -7,26 +7,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='relatorios.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Relatórios de Vacinação</h1>
-        <p>Resumo das aplicações de vacinas:</p>
+    <div class="barra-superior">
+        <img src="" alt="">
+        <h1>Controle de Vacinação de Bovinos</h1>
+        
+    
+        <div class="sidebar">
+            <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
+            <a class="btn2" href="calendario.html">Calendário de Vacinação</a>
+            <a class="btn" href="registro.html">Registro de Vacinação</a>
+            <a class="btn2" href="relatorios.html">Relatórios</a>
+        </div>
+        <div class="container">
+            <h1>Relatórios de Vacinação</h1>
+            <p>Resumo das aplicações de vacinas:</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Vacina</th>
-                    <th>Total de Aplicações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in dados %}
-                <tr>
-                    <td>{{ row.vacina }}</td>
-                    <td>{{ row.total_aplicacoes }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vacina</th>
+                        <th>Total de Aplicações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in dados %}
+                    <tr>
+                        <td>{{ row.vacina }}</td>
+                        <td>{{ row.total_aplicacoes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
