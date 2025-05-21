@@ -10,16 +10,16 @@
     <div class="barra-superior">
         <img src="" alt="">
         <h1>Controle de Vacinação de Bovinos</h1>
-        
+    </div>
     
-        <div class="sidebar">
-            <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
-            <a class="btn2" href="calendario.html">Calendário de Vacinação</a>
-            <a class="btn" href="registro.html">Registro de Vacinação</a>
-            <a class="btn2" href="relatorios.html">Relatórios</a>
-        </div>
+    <div class="sidebar">
+        <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
+        <a class="btn2" href="calendario.html">Calendário de Vacinação</a>
+        <a class="btn" href="registro.html">Registro de Vacinação</a>
+        <a class="btn2" href="relatorios.html">Relatórios</a>
+    </div>
         <div class="container"> 
-            <h1>Registro de Vacinas</h1>
+            <h2>Registro de Vacinas</h2>
                     <div class="box_form">
                         <form action="{{ url_for('registros.registrar') }}" method="post">
                             <div>
@@ -42,7 +42,7 @@
                                 <textarea id="observacao" name="observacoes"></textarea>
                             </div>
                             <br>
-                            <button type="submit">Cadastrar</button>
+                            <button type="submit" class="botao-primario">Cadastrar</button>
                         </form>
                     </div>
                 
