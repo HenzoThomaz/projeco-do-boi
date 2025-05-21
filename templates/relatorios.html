@@ -21,23 +21,30 @@
         <div class="container">
             <h2>Relatórios de Vacinação</h2>
             <p>Resumo das aplicações de vacinas</p>
-
+            {% if dados %} 
             <table>
                 <thead>
                     <tr>
                         <th>Vacina</th>
-                        <th>Total de Aplicações</th>
+                        <th>Animal/s</th>
+                        <th>Data de Aplicação</th>
+                        <th>Observações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for row in dados %}
+                    {% for item in dados %}
                     <tr>
-                        <td>{{ row.vacina }}</td>
-                        <td>{{ row.total_aplicacoes }}</td>
+                        <td>{{ item.vacina }}</td>
+                        <td>{{ item.animais }}</td>
+                        <td>{{ item.data_aplicacao.strftime('%d/%m/%Y') if item.data_aplicacao else '' }}</td>
+                        <td>{{ item.observacoes }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            {% else %}
+    <p class="no-data">Nenhum dado de vacinação encontrado.</p>
+    {% endif %}
         </div>
     </div>
 </body>
