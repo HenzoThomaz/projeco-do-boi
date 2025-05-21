@@ -43,6 +43,9 @@
                             </div>
                             <br>
                             <button type="submit" class="botao-primario">Cadastrar</button>
+                            {% if mensagem %}
+                                    <p style="color: red;">{{ mensagem }}</p>
+                            {% endif %}
                         </form>
                     </div>
                 
