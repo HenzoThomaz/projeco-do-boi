@@ -19,6 +19,10 @@ app.register_blueprint(relatorios_bp)
 def cadastro():
     return render_template("cadastro.html")
 
+@app.route('/vacinasfuturo.html')
+def vacinas_futuras():
+    return render_template("vacinasfuturo.html")
+
 #teste de rota do redefinir senha
 @app.route('/senha.html')
 def senha():
