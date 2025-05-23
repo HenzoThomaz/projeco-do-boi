@@ -27,14 +27,16 @@
             <div class="container">
                 <h2>Próxima Vacina a Ser Aplicada</h2>
             
-                <form>
-                    <label for="vacina">Vacina</label>
-                    <input type="text" id="vacina" name="vacina" required>
-
-                    <label for="data">Data</label>
-                    <input type="date" id="data" name="data" required>
-
-                </form>
+                {% if proxima_vacina %}
+                <div class="vacina-futura"> 
+                    <h3>{{ proxima_vacina.nome_vacina }}</h3>
+                    <p><strong>Descrição:</strong> {{ proxima_vacina.descricao }}</p>
+                    <p><strong>Data Prevista:</strong> {{ proxima_vacina.data_formatada }}</p>
+                    <p><strong>Animais:</strong> {{ proxima_vacina.animais }}</p>
+                </div>
+            {% else %}
+                <p>Nenhuma vacina futura encontrada.</p>
+            {% endif %}
             </div>
         </div>
     </div>    
