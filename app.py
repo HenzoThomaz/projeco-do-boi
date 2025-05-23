@@ -5,7 +5,7 @@ from cadastrar_vacina import cadastrar_vacina_bp
 from calendario import calendario_bp
 from registros import registros_bp
 from relatorios import relatorios_bp
-
+from senha import senha_bp
 
 app = Flask(__name__)
 app.register_blueprint(cadastro_bp)
@@ -14,6 +14,7 @@ app.register_blueprint(cadastrar_vacina_bp)
 app.register_blueprint(calendario_bp)
 app.register_blueprint(registros_bp)
 app.register_blueprint(relatorios_bp)
+app.register_blueprint(senha_bp)
 
 @app.route('/cadastro.html')
 def cadastro():
@@ -25,7 +26,7 @@ def vacinas_futuras():
 
 #teste de rota do redefinir senha
 @app.route('/senha.html')
-def senha():
+def nova_senha():
     return render_template("senha.html")
 
 @app.route('/sobre.html')
