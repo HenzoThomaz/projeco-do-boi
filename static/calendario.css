@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.barra-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.barra-superior a img {
+    width: 50px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.barra-superior h1 {
+    font-size: 20px;
+    color: white;
+    flex: 1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 70px; /* altura da barra superior */
+    left: 0;
+    width: 220px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    background-color: #74a03a;
+    transition: background-color 0.2s;
+}
+
+.sidebar .btn2 {
+    background-color: #74a03a;
+}
+
+.sidebar a:hover {
+    background-color: #32CD32;
+}
+
+/* Conteúdo principal */
+.container {
+    margin-left: 220px; /* espaço para sidebar */
+    margin-top: 70px; /* espaço para barra superior */
+    padding: 40px;
+    width: calc(100% - 220px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}

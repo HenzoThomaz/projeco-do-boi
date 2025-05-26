@@ -14,6 +14,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.logo{
+    width: 60px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
 .container{
     max-width:none;
     margin: 0 ;

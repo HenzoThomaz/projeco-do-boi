@@ -16,6 +16,14 @@ body {
     display: flex;
 }
 
+.logo{
+    width: 60px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* Barra superior */
 .barra-superior {
     position: fixed;
     top: 0;
@@ -53,6 +61,7 @@ position: absolute;
     background-color: #e74c3c;
 }
 
+/* Sidebar */
 .sidebar {
     width: 220px;
     background-color: #1e1e1e;
@@ -98,6 +107,7 @@ position: absolute;
     align-items: flex-start;
 }
 
+/* Container */
 .container {
     background-color: #36393f;
     padding: 30px 40px;
@@ -115,6 +125,7 @@ position: absolute;
     font-weight: 700;
 }
 
+/* Formulário */
 form {
     background-color: #202225;
     padding: 30px;

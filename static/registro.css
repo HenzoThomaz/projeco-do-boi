@@ -8,6 +8,13 @@
     font-family: 'Source Sans 3', sans-serif;
 }
 
+.logo{
+    width: 60px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
 body {
     width: 100vw;
     height: 100vh;
