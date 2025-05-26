@@ -9,8 +9,9 @@ app = Flask(__name__)
 def conexão_bd(nome, telefone, senha):
   conn = mysql.connector.connect(
     host="localhost",
+    port=3307, 
     user="root",
-    password="root",
+    password="",
     database="projeto-boi" )
   
   cursor = conn.cursor()

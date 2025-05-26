@@ -9,8 +9,9 @@ app = Flask(__name__)
 def conectar_bd():
     conn = mysql.connector.connect(
         host="localhost",
+        port=3307, 
         user="root",
-        password="root",
+        password="",
         database="projeto-boi"
     )
     return conn
@@ -42,4 +43,4 @@ def login():
                     return render_template('login.html', mensagem="Nome de usuário ou senha incorretos")
         except mysql.connector.Error as err:
             mensagem = f"Erro ao conectar ao banco de dados: {err}"
-
+            return render_template('login.html', mensagem=f"Erro no servidor: {mensagem}")

@@ -6,8 +6,9 @@ calendario_bp = Blueprint('calendario', __name__, url_prefix='/calendario')
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
+        port=3307, 
         user="root",
-        password="root",
+        password="",
         database="projeto-boi"
     )
 

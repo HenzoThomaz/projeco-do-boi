@@ -6,8 +6,9 @@ cadastrar_vacina_bp = Blueprint('cadastrarvac', __name__)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
+        port=3307, 
         user="root",
-        password="root",
+        password="",
         database="projeto-boi"
     )
 
