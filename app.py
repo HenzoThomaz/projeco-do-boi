@@ -7,6 +7,7 @@ from registros import registros_bp
 from relatorios import relatorios_bp
 from senha import senha_bp
 from vacinas_futuras import vacinas_futuras_bp
+from principal import principal_bp
 
 app = Flask(__name__)
 app.register_blueprint(cadastro_bp)
@@ -17,6 +18,7 @@ app.register_blueprint(registros_bp)
 app.register_blueprint(relatorios_bp)
 app.register_blueprint(senha_bp)
 app.register_blueprint(vacinas_futuras_bp)
+app.register_blueprint(principal_bp)
 
 @app.route('/cadastro.html')
 def cadastro():
