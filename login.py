@@ -10,7 +10,7 @@ def conectar_bd():
     conn = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
     return conn

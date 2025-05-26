@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "projeto-boi";
 
 // aqui serve para criar a conexão com o banco de dados do xampp
