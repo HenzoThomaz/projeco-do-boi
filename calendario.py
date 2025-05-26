@@ -1,12 +1,13 @@
 from flask import Blueprint, render_template
 import mysql.connector
+from datetime import date
 
 calendario_bp = Blueprint('calendario', __name__, url_prefix='/calendario')
 
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port=3307, 
+        port=3307,  # alterar se for necessario para utilizar o banco de dados
         user="root",
         password="",
         database="projeto-boi"
@@ -16,14 +17,21 @@ def conectar_bd():
 def ver_calendario():
     conn = conectar_bd()
     cursor = conn.cursor(dictionary=True)
+
+    # filtrar as vacinas
     cursor.execute("""
-        SELECT a.nome AS animal, v.nome AS vacina, c.data_vacinacao
-        FROM calendario_vacinacao c
-        JOIN animais a ON c.id_animal = a.id
-        JOIN vacinas v ON c.id_vacina = v.id
-        ORDER BY c.data_vacinacao
-    """)
+        SELECT
+            vf.nome_vacina AS vacina,
+            vf.descricao,
+            vf.data,
+            vf.animais
+        FROM vacinas_futuras vf
+        WHERE vf.data >= %s
+        ORDER BY vf.data ASC
+    """, (date.today(),))
+
     dados = cursor.fetchall()
     cursor.close()
     conn.close()
+
     return render_template('calendario.html', dados=dados)
