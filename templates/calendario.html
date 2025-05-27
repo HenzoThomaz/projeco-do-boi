@@ -13,7 +13,7 @@
             <img class="logo" src="static/imagens/Logo.png" alt="logo">
         </a>
         <h1>Controle de Vacinação de Bovinos</h1>
-        
+    </div>    
     
         <div class="sidebar">
             <a class="btn" href="cadastrarvac.html">Cadastrar Vacina</a>
@@ -22,10 +22,34 @@
             <a class="btn2" href="relatorios.html">Relatórios</a>
             <a class="btn" href="vacinasfuturo.html">Cadastro de Vacinas Futuras</a>
         </div>
-    
-        
+        <div class="container">
+            <h2>Calendario de Vacinação</h2>
+            <p>Resumo das proximas vacinas a serem aplicadas</p>
+            {% if dados %} 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vacina</th>
+                        <th>Descrição</th>
+                        <th>Data</th>
+                        <th>Animais</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in dados %}
+                    <tr>
+                        <td>{{ item.vacina }}</td>
+                        <td>{{ item.descricao }}</td>
+                        <td>{{ item.data.strftime('%d/%m/%Y') if item.data else '' }}</td>
+                        <td>{{ item.animais }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+    <p class="no-data">Nenhum dado de vacinação encontrado.</p>
+    {% endif %}
+            </div>      
                 
-        
-    </div>
 </body>
 </html>

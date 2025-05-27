@@ -2,7 +2,7 @@ from flask import Blueprint, render_template
 import mysql.connector
 from datetime import date
 
-calendario_bp = Blueprint('calendario', __name__, url_prefix='/calendario')
+calendario_bp = Blueprint('calendario', __name__,)
 
 def conectar_bd():
     return mysql.connector.connect(
@@ -13,7 +13,7 @@ def conectar_bd():
         database="projeto-boi"
     )
 
-@calendario_bp.route('/')
+@calendario_bp.route('/calendario.html')
 def ver_calendario():
     conn = conectar_bd()
     cursor = conn.cursor(dictionary=True)
