@@ -6,9 +6,9 @@ vacinas_futuras_bp = Blueprint('vacinas_futuras', __name__)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port=3307, 
+        port="3306",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
 
@@ -21,7 +21,7 @@ def proximavac():
         animais = request.form['animais']
         conn = conectar_bd()
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO vacinas_futuras (nome_vacina, descricao, data, animais) VALUES (%s, %s, %s, %s)", (nome, descricao, data, animais))
+        cursor.execute("INSERT INTO vacinas_futuras (nome_vacina, descricao_vacinacao, data, animais) VALUES (%s, %s, %s, %s)", (nome, descricao, data, animais))
         conn.commit()
         cursor.close()
         conn.close()

@@ -6,9 +6,9 @@ senha_bp = Blueprint('nova_senha', __name__)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port=3307, 
+        port="3306",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
 

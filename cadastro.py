@@ -9,10 +9,11 @@ app = Flask(__name__)
 def conexão_bd(nome, telefone, senha):
   conn = mysql.connector.connect(
     host="localhost",
-    port=3307, 
+    port="3306",
     user="root",
-    password="",
-    database="projeto-boi" )
+    password="root",
+    database="projeto-boi" 
+    )
   
   cursor = conn.cursor()
   query = "INSERT INTO usuarios (nome, telefone, senha) VALUES (%s, %s, %s)"

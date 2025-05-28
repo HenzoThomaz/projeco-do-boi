@@ -6,9 +6,9 @@ relatorios_bp = Blueprint('relatorios', __name__,)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port=3307, 
+        port="3306",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
 
@@ -21,7 +21,7 @@ def relatorio():
     try:
         conn = conectar_bd()
         cursor = conn.cursor(dictionary=True) 
-        cursor.execute("SELECT vacina, animais, data_aplicacao, observacoes FROM registros_vacina") 
+        cursor.execute("SELECT nome_vacina, animais, data_aplicacao, observacoes FROM registros_vacina") 
 
         dados = cursor.fetchall()
 

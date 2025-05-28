@@ -37,7 +37,7 @@
                 <tbody>
                     {% for item in dados %}
                     <tr>
-                        <td>{{ item.vacina }}</td>
+                        <td>{{ item.nome_vacina }}</td>
                         <td>{{ item.animais }}</td>
                         <td>{{ item.data_aplicacao.strftime('%d/%m/%Y') if item.data_aplicacao else '' }}</td>
                         <td>{{ item.observacoes }}</td>

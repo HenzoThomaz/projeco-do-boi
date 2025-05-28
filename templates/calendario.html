@@ -39,7 +39,7 @@
                     {% for item in dados %}
                     <tr>
                         <td>{{ item.vacina }}</td>
-                        <td>{{ item.descricao }}</td>
+                        <td>{{ item.descricao_vacinacao }}</td>
                         <td>{{ item.data.strftime('%d/%m/%Y') if item.data else '' }}</td>
                         <td>{{ item.animais }}</td>
                     </tr>

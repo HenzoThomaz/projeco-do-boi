@@ -2,9 +2,9 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "projeto-boi";
-$port = 3307; 
+$port = 3306; 
 
 // aqui serve para criar a conexão com o banco de dados do xampp
 

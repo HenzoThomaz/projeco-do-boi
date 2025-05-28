@@ -7,9 +7,9 @@ calendario_bp = Blueprint('calendario', __name__,)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port=3307,  # alterar se for necessario para utilizar o banco de dados
+        port="3306",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
 
@@ -22,7 +22,7 @@ def ver_calendario():
     cursor.execute("""
         SELECT
             vf.nome_vacina AS vacina,
-            vf.descricao,
+            vf.descricao_vacinacao,
             vf.data,
             vf.animais
         FROM vacinas_futuras vf

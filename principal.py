@@ -9,9 +9,9 @@ principal_bp = Blueprint('rpincipal', __name__)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port="3307",
+        port="3306",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
 
@@ -28,7 +28,7 @@ def vacina_proxima():
         # Assumindo que você tem uma tabela como 'vacinas_futuras' com as colunas:
         # id, nome_vacina, descricao, data_prevista, animais
         sql_query = """
-            SELECT nome_vacina, descricao, DATE_FORMAT(data, '%d/%m/%Y') as data_formatada, animais
+            SELECT nome_vacina, descricao_vacinacao, DATE_FORMAT(data, '%d/%m/%Y') as data_formatada, animais
             FROM vacinas_futuras
             WHERE data >= CURDATE()
             ORDER BY data ASC

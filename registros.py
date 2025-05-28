@@ -6,9 +6,9 @@ registros_bp = Blueprint('registros', __name__,)
 def conectar_bd():
     return mysql.connector.connect(
         host="localhost",
-        port=3307, 
+        port="3306",
         user="root",
-        password="",
+        password="root",
         database="projeto-boi"
     )
 
@@ -23,7 +23,7 @@ def registrar():
         data_aplicacao = request.form['data_aplicacao']
         observacoes = request.form['observacoes']
         cursor.execute("""
-            INSERT INTO registros_vacina (animais, vacina, data_aplicacao, observacoes)
+            INSERT INTO registros_vacina (animais, nome_vacina, data_aplicacao, observacoes)
             VALUES (%s, %s, %s, %s)
         """, (animais, vacina, data_aplicacao, observacoes))
         conn.commit()
