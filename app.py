@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for,Blueprint
+from flask import Flask, render_template, request, redirect, url_for,Blueprint, session, flash
+from datetime import timedelta
 from cadastro import cadastro_bp
 from login import login_bp
 from cadastrar_vacina import cadastrar_vacina_bp
@@ -19,6 +20,10 @@ app.register_blueprint(relatorios_bp)
 app.register_blueprint(senha_bp)
 app.register_blueprint(vacinas_futuras_bp)
 app.register_blueprint(principal_bp)
+
+app.secret_key = 'chave_secreta' 
+app.config['SESSION_PERMANENT'] = True
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=60)
 
 @app.route('/cadastro.html')
 def cadastro():

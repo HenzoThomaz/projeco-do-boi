@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for,redirect,Blueprint
+from flask import Flask, render_template, request, url_for,redirect,Blueprint, flash, session
 import mysql.connector
 
 
@@ -20,27 +20,35 @@ def conectar_bd():
 def pagina_login():
     return render_template('login.html')
 
-@login_bp.route('/login.html', methods=['POST'])
+@login_bp.route('/login', methods=['POST']) # Removendo .html do nome da rota
 def login():
     if request.method == 'POST':
-        nome = request.form.get('nome')
-        senha = request.form.get('senha')
+        nome_digitado = request.form['nome']
+        senha_digitada = request.form['senha']
 
-        try:
-                conn = conectar_bd()
-                cursor = conn.cursor()
-                query = "SELECT * FROM usuarios WHERE nome = %s AND senha = %s"
-                cursor.execute(query, (nome, senha))
-                usuario = cursor.fetchone()
-                cursor.close()
-                conn.close()    
+        
+        conn = conectar_bd()
+        cursor = conn.cursor(dictionary=True)
 
-                if usuario:
-                # Se tudo estiver certinho no bd, redirecione para a página principal
-                    return redirect(url_for('principal'))
-                else:
-                # Se n exiba a mensagem de erro novamente no formulário de login do html
-                    return render_template('login.html', mensagem="Nome de usuário ou senha incorretos")
-        except mysql.connector.Error as err:
-            mensagem = f"Erro ao conectar ao banco de dados: {err}"
-            return render_template('login.html', mensagem=f"Erro no servidor: {mensagem}")
+
+        query = "SELECT id_usuario, nome, senha FROM usuarios WHERE nome = %s AND senha = %s"
+        cursor.execute(query, (nome_digitado, senha_digitada))
+        usuario = cursor.fetchone() # usuario será um dicionário se encontrado
+
+        cursor.close()
+        conn.close()
+
+        if usuario:
+                # --- AQUI É ONDE USAMOS A SESSION! ---
+                # Armazene o ID do usuário (gerado automaticamente pelo BD) na sessão
+                session['user_id'] = usuario['id_usuario']
+                # Armazene o nome do usuário também para exibir na interface, se quiser
+                session['user_name'] = usuario['nome']
+
+                flash(f"Login realizado com sucesso! Bem-vindo(a), {usuario['nome']}!", 'success')
+                return redirect(url_for('principal')) # Redirecione para a página principal
+
+        else:
+                # Se não encontrar o usuário ou a senha estiver incorreta
+                flash("Nome de usuário ou senha incorretos.", 'danger')
+                return render_template('login.html') # Renderiza o formulário de login novamente com a mensagem de erro
