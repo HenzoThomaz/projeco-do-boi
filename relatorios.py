@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for,session,flash
 import mysql.connector
 
 relatorios_bp = Blueprint('relatorios', __name__,)
@@ -14,21 +14,18 @@ def conectar_bd():
 
 @relatorios_bp.route('/relatorios.html')
 def relatorio():
-    conn = conectar_bd()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute
-    dados= []
-    try:
+    if 'user_id' not in session:
+        flash('Você precisa estar logado para cadastrar vacinas.', 'warning')
+        return redirect(url_for('login.login')) 
+    else:
+        id_usuario_logado = session['user_id']
+        
         conn = conectar_bd()
-        cursor = conn.cursor(dictionary=True) 
-        cursor.execute("SELECT nome_vacina, animais, data_aplicacao, observacoes FROM registros_vacina") 
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""SELECT nome_vacina, animais, data_aplicacao, observacoes FROM registros_vacina WHERE id_usuario = %s""", (id_usuario_logado,)) 
 
         dados = cursor.fetchall()
+        cursor.close()
+        conn.close()
 
-        return render_template('relatorios.html',dados=dados)
-
-    finally:
-        if cursor:
-            cursor.close()
-        if conn:
-            conn.close()
+        return render_template('relatorios.html', dados=dados)

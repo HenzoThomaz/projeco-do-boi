@@ -1,10 +1,9 @@
 
-
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for,session,flash
 import mysql.connector
 from datetime import date 
 
-principal_bp = Blueprint('rpincipal', __name__)
+principal_bp = Blueprint('principal', __name__)
 
 def conectar_bd():
     return mysql.connector.connect(
@@ -17,33 +16,25 @@ def conectar_bd():
 
 @principal_bp.route('/principal.html')
 def vacina_proxima():
-    conn = None
-    cursor = None
-    proxima_vacina = None
-    try:
+    if 'user_id' not in session:
+        flash('Você precisa estar logado para cadastrar vacinas.', 'warning')
+        return redirect(url_for('login.login')) 
+    else:
+        id_usuario_logado = session['user_id']
+
         conn = conectar_bd()
-        cursor = conn.cursor(dictionary=True) 
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("""SELECT
+    vf.nome_vacina,
+    vf.descricao_vacinacao,
+    DATE_FORMAT(vf.data, '%d/%m/%Y') AS data_formatada,
+    vf.animais FROM vacinas_futuras vf WHERE
+    vf.data >= %s AND vf.id_usuario = %s
+ORDER BY vf.data ASC LIMIT 1
+            """, (date.today(),id_usuario_logado))
 
-        # Consulta SQL para pegar a vacina futura mais próxima
-        # Assumindo que você tem uma tabela como 'vacinas_futuras' com as colunas:
-        # id, nome_vacina, descricao, data_prevista, animais
-        sql_query = """
-            SELECT nome_vacina, descricao_vacinacao, DATE_FORMAT(data, '%d/%m/%Y') as data_formatada, animais
-            FROM vacinas_futuras
-            WHERE data >= CURDATE()
-            ORDER BY data ASC
-            LIMIT 1
-        """
-        cursor.execute(sql_query)
-        proxima_vacina = cursor.fetchone() 
+        dados = cursor.fetchall()
+        cursor.close()
+        conn.close()
 
-    except mysql.connector.Error as err:
-        print(f"Erro ao conectar ou consultar o banco de dados: {err}")
-        
-    finally:
-        if cursor:
-            cursor.close()
-        if conn:
-            conn.close()
-
-    return render_template('principal.html', proxima_vacina=proxima_vacina)
+        return render_template('principal.html', dados=dados)
