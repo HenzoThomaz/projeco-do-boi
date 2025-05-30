@@ -20,7 +20,7 @@ def conectar_bd():
 def pagina_login():
     return render_template('login.html')
 
-@login_bp.route('/login', methods=['POST']) # Removendo .html do nome da rota
+@login_bp.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
         nome_digitado = request.form['nome']
@@ -33,22 +33,16 @@ def login():
 
         query = "SELECT id_usuario, nome, senha FROM usuarios WHERE nome = %s AND senha = %s"
         cursor.execute(query, (nome_digitado, senha_digitada))
-        usuario = cursor.fetchone() # usuario será um dicionário se encontrado
+        usuario = cursor.fetchone() 
 
         cursor.close()
         conn.close()
 
         if usuario:
-                # --- AQUI É ONDE USAMOS A SESSION! ---
-                # Armazene o ID do usuário (gerado automaticamente pelo BD) na sessão
-                session['user_id'] = usuario['id_usuario']
-                # Armazene o nome do usuário também para exibir na interface, se quiser
+                session['user_id'] = usuario['id_usuario']                                                     
                 session['user_name'] = usuario['nome']
 
-                flash(f"Login realizado com sucesso! Bem-vindo(a), {usuario['nome']}!", 'success')
-                return redirect(url_for('principal')) # Redirecione para a página principal
+                return redirect(url_for('principal'))
 
         else:
-                # Se não encontrar o usuário ou a senha estiver incorreta
-                flash("Nome de usuário ou senha incorretos.", 'danger')
-                return render_template('login.html') # Renderiza o formulário de login novamente com a mensagem de erro
+                return render_template('login.html', mensagem='Usuario ou senha estão incorretos' ) 

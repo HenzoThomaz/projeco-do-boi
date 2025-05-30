@@ -26,8 +26,7 @@ def cadastrar():
         descricao = request.form.get('descricao')
 
         if not nome or not descricao:
-            flash("Por favor, preencha todos os campos da vacina.", 'danger')
-            return render_template('cadastrarvac.html')
+            return render_template('cadastrarvac.html', mensagem2='Preencha todos os campos para continuar')
 
         conn = conectar_bd()
         cursor = conn.cursor()
@@ -38,9 +37,8 @@ def cadastrar():
                 (nome, descricao, id_usuario_logado) 
             )
             conn.commit()
-            flash("Vacina cadastrada com sucesso!", 'success')
             
-            return redirect(url_for('cadastrarvac.cadastrar')) 
+            return redirect(url_for('cadastrarvac.cadastrar')) and render_template('cadastrarvac.html',mensagem='Vacina cadastrada com sucesso!')
             
         except mysql.connector.Error as err:
             conn.rollback() 

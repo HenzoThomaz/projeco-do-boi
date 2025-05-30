@@ -41,6 +41,9 @@
                                     
                                     <button type="submit" class="botao-primario">Cadastrar Vacina</button>
                                 </div>
+                                {% if mensagem2 %}
+                                    <p style="color: red;">{{ mensagem2 }}</p>
+                                {% endif %}
                                 {% if mensagem %}
                                     <p style="color: #74a03a;">{{ mensagem }}</p>
                                 {% endif %}
