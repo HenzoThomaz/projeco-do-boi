@@ -21,6 +21,7 @@ def vacina_proxima():
         return redirect(url_for('login.login')) 
     else:
         id_usuario_logado = session['user_id']
+        dados = []
 
         conn = conectar_bd()
         cursor = conn.cursor(dictionary=True)

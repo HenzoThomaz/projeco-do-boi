@@ -22,11 +22,11 @@
         <a class="btn2" href="relatorios.html">Relatórios</a>
         <a class="btn" href="vacinasfuturo.html">Cadastro de Vacinas Futuras</a>
     </div>
-        {% if dados %}
+        
         <div class="main-content">
             <div class="container">
                 <h2>Próxima Vacina a Ser Aplicada</h2>
-            
+                {% if dados %}
                 {% for item in dados%}
                 <div class="vacina-futura"> 
                     <h3>{{ item.nome_vacina }}</h3>
@@ -34,11 +34,11 @@
                     <p><strong>Data Prevista:</strong> {{ item.data_formatada }}</p>
                     <p><strong>Animais:</strong> {{ item.animais }}</p>
                     {% endfor %}
-                    
-                </div>
-                {% else %}
+                    {% else %}
                         <p class="no_data">Nenhuma vacina futura encontrada.</p>
                     {% endif %}
+                </div>
+                
             </div>
             
         </div>
