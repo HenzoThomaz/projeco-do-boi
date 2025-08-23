@@ -119,20 +119,13 @@ section2{
     padding-bottom: 30px;
 }
 .texto{
-    width: 50% ;
+    width: 100% ;
     padding: 40px 55px 40px 55px;
     font-size: 20px;
     text-align: center;
     font-weight: 600;
 }
-.imagem-grupo{
-    width: 50%;
-    
-}
-.imagem-grupo img{
-    width: 70%;
-    border-radius: 30px;
-}
+
 .container3{
     font-size: 25px;
     background-color: #87b331;
